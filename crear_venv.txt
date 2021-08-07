@@ -1,0 +1,5 @@
+
+python3 -m venv nombre_venv
+
+py -m venv nombre_venv
+
