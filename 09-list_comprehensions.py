@@ -11,9 +11,8 @@ def run():
     #         squares_no_div3.append(i**2)
     
     # print(squares_no_div3)
-    
-    
     #---------------------------------------------#
+    
     #👉 Ejemplo #1 👈
     # El bloque de codigo anterior se puede disminuir en la siguiente linea de codigo:
     squares_list_comprehensions = [i**2 for i in range(1, 101) if i%3 != 0]
