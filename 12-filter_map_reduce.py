@@ -7,9 +7,10 @@ def run():
     odd = list(filter(lambda x: x%2 != 0, my_list))
     squares = list(map(lambda x: x**2, my_list))
     all_multiplied = reduce(lambda a, b: a*b, my_list)
-
+    all_summation = reduce(lambda a, b: a+b, my_list)
     print(odd)
     print(squares)
     print(all_multiplied)
+    print(all_summation) 
 if __name__ == '__main__':
     run()
