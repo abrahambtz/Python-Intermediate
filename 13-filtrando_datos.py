@@ -74,17 +74,45 @@ def run():
     all_pythons_devs = [worker['name'] for worker in DATA if worker['language'] == 'python']
     all_platzi_worker = [worker['name'] for worker in DATA if worker['organization'] == 'Platzi']
     
+
     
     # List comprehensions
+    # Devuelve una lista de nombre empleados mayores de 18
     adults = [worker['name'] for worker in DATA if worker['age'] > 18]
+    #print(adults)
+    
+    adults = list(filter(lambda worker: worker['age'] > 18, DATA)) # Filtrer limpia y devuelve lo que cumpla con la condicion
+    adults = list(map(lambda worker: worker['name'], adults)) # Map solo va a organizar de acuerdo.
+    adults = list(map(lambda worker: {worker['name'], worker['age']}, DATA))
+    # Unir diccionario con otro diccionario, de acuerdo lo que obtengamos en su condicion
+    old_people = list(map(lambda worker: worker | {"old": worker["age"] > 70}, DATA))
     
     
-    adults = list(filter(lambda worker: worker['age'] > 18, DATA))
-    adults = list(map(lambda worker: worker['name'], adults))
 
-    old_people = list(map(lambda worker: worker | {"old": worker["age"] > 70} | {'hola':worker['name']}, DATA))
+    # Reto: 
+
+    all_python_devs_fm = list(filter(lambda worker: worker['language'] == 'python', DATA))
+    all_python_devs_fm = list(map(lambda worker: worker['name'], all_python_devs_fm))
+    print(all_python_devs_fm)
+    all_platzi_worker_fm = list(filter(lambda worker: worker['organization'] == 'Platzi', DATA))
+    all_platzi_worker_fm = list(map(lambda worker: worker['name'], all_platzi_worker_fm))
+    print(all_platzi_worker_fm)
+
+    adults = [worker['name'] for worker in DATA if worker['age'] > 18]
+    print(adults)
+    old_people = [worker | {"old": worker["age"] > 70} for worker in DATA]
+    print(old_people)
+
+
+
+    #print(old_people)
     # print(adults)
     # for i in old_people:
     #     print(i)
+    #print(all_platzi_worker)
+    #print(all_pythons_devs)
+
+    
+
 if __name__ == '__main__':
     run()
