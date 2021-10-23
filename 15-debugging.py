@@ -2,6 +2,7 @@ def divisor(num):
     try:
         if num < 0:
             raise ValueError('Ingresa un numero mayor a 0')
+        breakpoint()
         list = [i for i in range(1, num+1) if num % i == 0] 
         return list
     except ValueError as ve:
