@@ -2,6 +2,8 @@
 # Clase del modulo  collections
 from queue import Queue
 
+from queue import Queue
+
 
 
 def createMaze():
